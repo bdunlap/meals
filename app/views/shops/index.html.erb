@@ -1,0 +1,12 @@
+<h1>Shops</h1>
+
+<%= link_to "New shop", new_shop_path %>
+
+<div id="shops">
+  <% @shops.each do |shop| %>
+    <div>
+      <%= link_to shop.name, shop %>
+    </div>
+  <% end %>
+</div>
+

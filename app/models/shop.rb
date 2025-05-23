@@ -1,5 +1,5 @@
-class Grocery < ApplicationRecord
-  belongs_to :shop, optional: true
+class Shop < ApplicationRecord
+  has_many :groceries
 
   validates :name, presence: true
   validates :name, uniqueness: true

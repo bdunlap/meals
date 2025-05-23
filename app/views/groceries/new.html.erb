@@ -1,13 +1,4 @@
 <h1>New grocery</h1>
 
-<%= form_with model: @grocery do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-
+<%= render "form", grocery: @grocery %>
+<%= link_to "Cancel", groceries_path %>

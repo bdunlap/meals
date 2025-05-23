@@ -1,0 +1,13 @@
+<%= form_with model: grocery do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+
+    Shop <%= form.collection_radio_buttons :shop_id, Shop.order(:name), :id, :name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+

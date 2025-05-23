@@ -1,4 +1,10 @@
 <h1><%= @grocery.name %></h1>
+<p>
+Shop: <strong><%= @grocery.shop&.name || "None selected" %></strong>
+</p>
 
-<%= link_to "Back", groceries_path %>
+<%= link_to "Groceries", groceries_path %>
+<%= link_to "Edit", edit_grocery_path %>
+<%= button_to "Delete", @grocery, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+
 

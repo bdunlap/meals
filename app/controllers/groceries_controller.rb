@@ -1,28 +1,14 @@
-class GroceriesController < ApplicationController
-  def index
-    @groceries = Grocery.all
-  end
-
-  def show
-    @grocery = Grocery.find(params[:id])
-  end
-
-  def new
-    @grocery = Grocery.new
-  end
-
-  def create
-    @grocery = Grocery.new(grocery_params)
-
-    if @grocery.save
-      redirect_to @grocery
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
+class GroceriesController < CrudController
   private
-    def grocery_params
-      params.expect(grocery: [ :name ])
+    def object_class
+      Grocery
+    end
+
+    def object_params
+      params.expect(grocery: [ :name, :shop_id ])
+    end
+
+    def object_path
+      groceries_path
     end
 end
