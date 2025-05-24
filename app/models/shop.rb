@@ -3,4 +3,12 @@ class Shop < ApplicationRecord
 
   validates :name, presence: true
   validates :name, uniqueness: true
+
+  def self.locations
+    @locations ||= [
+      "produce",
+      "meat",
+      "canned/jarred"
+    ]
+  end
 end

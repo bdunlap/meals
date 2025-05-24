@@ -10,12 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_22_033225) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_24_035803) do
   create_table "groceries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "shop_id"
+    t.text "shop_location"
+    t.text "house_location"
+    t.boolean "needed"
+    t.boolean "in_pantry"
     t.index ["shop_id"], name: "index_groceries_on_shop_id"
   end
 

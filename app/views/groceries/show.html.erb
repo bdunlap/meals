@@ -2,6 +2,25 @@
 <p>
 Shop: <strong><%= @grocery.shop&.name || "None selected" %></strong>
 </p>
+<% if @grocery.in_pantry %>
+<p>
+<strong>pantry item</strong>
+</p>
+<% end %>
+<p>
+Need more? <%= @grocery.needed || "false" %>
+</p>
+<p>
+Buy more? 
+<%= button_to "Yes", needed_grocery_path(@grocery), method: :patch %>
+<%= button_to "No", not_needed_grocery_path(@grocery), method: :patch %>
+</p>
+<p>
+Shop Location: <strong><%= @grocery.shop_location || "None selected" %></strong>
+</p>
+<p>
+House Location: <strong><%= @grocery.house_location || "None selected" %></strong>
+</p>
 
 <%= link_to "Groceries", groceries_path %>
 <%= link_to "Edit", edit_grocery_path %>

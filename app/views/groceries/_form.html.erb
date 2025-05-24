@@ -2,8 +2,19 @@
   <div>
     <%= form.label :name %>
     <%= form.text_field :name %>
+    <br>
+
+    <%= form.checkbox :in_pantry %>
+    <%= form.label :in_pantry, "Pantry item?" %>
+    <br>
 
     Shop <%= form.collection_radio_buttons :shop_id, Shop.order(:name), :id, :name %>
+    <br>
+
+    Shop Location <%= form.select :shop_location, Shop.locations %>
+    <br>
+    House Location <%= form.select :house_location, Grocery.house_locations %>
+    </select>
   </div>
 
   <div>
