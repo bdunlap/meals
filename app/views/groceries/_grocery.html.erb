@@ -1,0 +1,12 @@
+<tr>
+  <td><%= grocery.name %></td>
+  <td><%= render "grocery_needed", grocery: grocery %></td>
+  <td><%= grocery.in_pantry %></td>
+  <td><%= grocery.shop&.name || "not selected" %></td>
+  <td><%= grocery.shop_location || "not selected" %></td>
+  <td><%= grocery.house_location || "not selected" %></td>
+  <td>
+    <%= link_to 'Edit', edit_grocery_path(grocery) %> |
+    <%= link_to 'Delete', grocery, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>

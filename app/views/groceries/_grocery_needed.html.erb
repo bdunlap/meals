@@ -1,0 +1,6 @@
+<%= grocery.needed ? "Yes" : "No" %>
+<% if grocery.needed %>
+<%= button_to "Don't buy more", not_needed_grocery_path(grocery), method: :patch %>
+<% else %>
+<%= button_to "Buy more", needed_grocery_path(grocery), method: :patch %>
+<% end %>

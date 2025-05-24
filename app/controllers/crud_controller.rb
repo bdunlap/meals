@@ -27,7 +27,7 @@ class CrudController < ApplicationController
 
   def update
     if @object.update(object_params)
-      redirect_to @object
+      redirect_to object_path
     else
       render :edit, status: :unprocessable_entity
     end

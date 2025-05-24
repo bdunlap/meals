@@ -24,9 +24,9 @@ class GroceriesController < CrudController
 
     def set_needed(value)
       if @grocery.update(needed: value)
-        redirect_to @grocery
+        redirect_to groceries_path
       else
-        redirect_to @grocery, alert: 'Could not set "needed" state'
+        redirect_to groceries_path, alert: 'Could not set "needed" state'
       end
     end
 end
