@@ -1,6 +1,6 @@
 class CrudController < ApplicationController
-  before_action :set_object, only: [:show, :edit]
-  before_action :find_object, only: [:update, :destroy]
+  before_action :set_object, only: [ :show, :edit ]
+  before_action :find_object, only: [ :update, :destroy ]
 
   def index
     instance_variable_set("@#{object_name.pluralize}", object_class.all)
@@ -55,7 +55,7 @@ class CrudController < ApplicationController
     def object_params
       raise NotImplementedError, "Subclasses must implement #object_params"
     end
-    
+
     def object_path
       raise NotImplementedError, "Subclasses must implement #object_params"
     end

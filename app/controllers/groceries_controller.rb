@@ -1,5 +1,5 @@
 class GroceriesController < CrudController
-  before_action :set_object, only: [:show, :edit, :needed, :not_needed] 
+  before_action :set_object, only: [ :show, :edit, :needed, :not_needed ]
 
   def needed
     set_needed(true)
@@ -23,7 +23,7 @@ class GroceriesController < CrudController
     end
 
     def set_needed(value)
-      if @grocery.update(needed: value) 
+      if @grocery.update(needed: value)
         redirect_to @grocery
       else
         redirect_to @grocery, alert: 'Could not set "needed" state'
